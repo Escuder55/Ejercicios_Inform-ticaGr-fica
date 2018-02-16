@@ -118,8 +118,8 @@ void GLinit(int width, int height) {
 	Axis::setupAxis();
 	Cube::setupCube();*/
 
-	MyFirstShader::myInitCode();
-
+	//MyFirstShader::myInitCode();
+	Cube::setupCube();
 
 
 }
@@ -129,8 +129,8 @@ void GLcleanup() {
 	Axis::cleanupAxis();
 	Cube::cleanupCube();
 */
-	MyFirstShader::myCleanUpCode();
-
+	//MyFirstShader::myCleanUpCode();
+	Cube::cleanupCube();
 }
 
 /////variables
@@ -151,8 +151,8 @@ void GLrender(double currentTime) {
 	Axis::drawAxis();
 	Cube::drawCube();*/
 	
-	MyFirstShader::myRenderCode(currentTime);
-	
+	//MyFirstShader::myRenderCode(currentTime);
+	Cube::drawCube();
 
 
 	ImGui::Render();
