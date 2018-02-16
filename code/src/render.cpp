@@ -1013,9 +1013,11 @@ namespace MyFirstShader
 		\n\
 		void main()\n\
 		{\n\
-		gl_Position = vec4(0.0,0.0,0.5,1.0);\n\
-		}\n\
-		"
+		const vec4 vertices[3] = vec4[3](vec4(0.25, -0.25, 0.50, 1.0),\n\
+										 vec4(0.25, 0.25, 0.50, 1.0), \n\
+										 vec4(-0.25, -0.25, 0.50, 1.00));\n\
+		gl_Position = vertices[gl_VertexID];\n\
+		}"
 	};
 
 
@@ -1082,7 +1084,7 @@ namespace MyFirstShader
 	}
 
 	//5. myRenderCode(double CurrentTime)
-
+	
 	void myRenderCode(double currentTime)
 	{
 
@@ -1092,8 +1094,7 @@ namespace MyFirstShader
 		glUseProgram(myRenderProgram);
 
 		glPointSize(40.0f);
-		glDrawArrays(GL_POINTS, 0, 1);
-
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 
 	}
